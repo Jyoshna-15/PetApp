@@ -15,6 +15,9 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/pets", require("./routes/petRoutes"));
+const favoriteRoutes = require("./routes/favorites");
+app.use("/api/favorites", favoriteRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("Pet Adopt Backend Running");
